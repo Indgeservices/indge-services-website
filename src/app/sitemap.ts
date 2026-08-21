@@ -1,5 +1,2 @@
 import type { MetadataRoute } from "next";
-
-export default function sitemap(): MetadataRoute.Sitemap {
-  return [{ url: "https://www.indgeservices.co.uk", changeFrequency: "weekly", priority: 1 }];
-}
+export default function sitemap(): MetadataRoute.Sitemap { const base="https://www.indgeservices.co.uk"; return ["","/services","/areas","/about","/selected-work","/reviews","/quote","/services/diagnostics","/services/servicing"].map(path=>({url:`${base}${path}`,lastModified:new Date(),changeFrequency:path===""?"weekly":"monthly",priority:path===""?1:.8})); }

@@ -1,0 +1,5 @@
+import type { Metadata } from "next";
+import { PageHero } from "@/components/page-hero";
+export const metadata: Metadata={title:"Selected Work",description:"A curated selection of work from INDGE Services."};
+const categories=["Diagnostics","Servicing","Repairs"];
+export default function WorkPage(){return <main><PageHero eyebrow="Selected work" title="A few jobs." accent="Worth showing." copy="A deliberately curated home for genuine INDGE jobs — enough to demonstrate the work without creating a feed that needs constant weekly maintenance."/><section className="section"><div className="shell"><div className="work-grid">{categories.map((c,i)=><article className="work-card" key={c}><div className={`work-photo work-${i+1}`} aria-hidden="true"/><span className="section-label">{c}</span><h2>Real INDGE case study</h2><p>This slot is reserved for a genuine completed job, with verified vehicle, fault, work and location details before publication.</p><span className="muted">Case study to be verified</span></article>)}</div></div></section></main>}

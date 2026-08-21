@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "check": "npm run lint && npm run typecheck"
+    "check": "npm run lint && npm run typecheck",
+    "setup": "bash scripts/setup.sh"
   },
   "dependencies": {
     "next": "^16.2.10",

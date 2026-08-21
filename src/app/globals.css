@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #07090c;
+  --surface: #0d1117;
+  --surface-2: #121820;
+  --line: rgba(255,255,255,.12);
+  --text: #f2f4f5;
+  --muted: #8b929a;
+  --blue: #087fb8;
+  --blue-bright: #109ee8;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--bg); }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: Arial, Helvetica, sans-serif; }
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; }
+::selection { background: var(--blue); color: #fff; }
+
+.shell { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
+.site-header { position: absolute; inset: 0 0 auto; z-index: 20; height: 104px; }
+.header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.brand { display: flex; align-items: flex-end; gap: 10px; font-weight: 800; letter-spacing: .08em; }
+.brand-main { font-size: 30px; font-style: italic; color: var(--blue-bright); }
+.brand-sub { font-size: 9px; color: #c8cdd2; letter-spacing: .22em; padding-bottom: 6px; }
+.nav { display: flex; align-items: center; gap: 34px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.nav a { color: #dce0e4; transition: color .2s ease; }
+.nav a:hover { color: var(--blue-bright); }
+.header-quote { color: var(--blue-bright) !important; }
+
+.hero { min-height: 780px; display: grid; align-items: center; position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
+.hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 75% 50%, rgba(8,127,184,.18), transparent 25%), linear-gradient(90deg, #05070a 0%, #070a0e 43%, #10161d 100%); }
+.hero::after { content: ""; position: absolute; right: -2%; bottom: 7%; width: 54%; height: 55%; border: 1px solid rgba(16,158,232,.2); border-radius: 50% 15% 8% 22%; transform: skewX(-8deg); box-shadow: inset 0 0 90px rgba(8,127,184,.08); }
+.hero-inner { position: relative; z-index: 2; padding-top: 120px; display: grid; grid-template-columns: 1.02fr .98fr; gap: 70px; align-items: center; }
+.eyebrow { color: var(--blue-bright); text-transform: uppercase; letter-spacing: .14em; font-size: 13px; margin-bottom: 22px; }
+.hero h1 { margin: 0; max-width: 660px; font-size: clamp(58px, 6.2vw, 94px); line-height: .98; font-weight: 400; letter-spacing: -.045em; }
+.hero h1 span { color: var(--blue); }
+.lede { color: #b7bdc3; font-size: 18px; line-height: 1.7; max-width: 580px; margin: 28px 0 34px; }
+.actions { display: flex; align-items: center; gap: 26px; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 54px; padding: 0 28px; border: 1px solid var(--blue); text-transform: uppercase; letter-spacing: .08em; font-size: 12px; transition: .2s ease; }
+.btn-primary { background: var(--blue); color: #fff; }
+.btn:hover { transform: translateY(-2px); border-color: var(--blue-bright); }
+.phone { font-size: 19px; letter-spacing: .02em; }
+.rating { margin-top: 34px; display: flex; align-items: center; gap: 14px; color: #aeb4ba; }
+.stars { color: #fff; letter-spacing: .1em; }
+.rating strong { color: var(--blue-bright); font-weight: 500; }
+.credentials { margin-top: 24px; color: #777f87; letter-spacing: .12em; text-transform: uppercase; font-size: 11px; display: flex; gap: 18px; flex-wrap: wrap; }
+.credentials i { color: var(--blue); font-style: normal; }
+.hero-art { min-height: 500px; position: relative; display: flex; align-items: center; justify-content: center; }
+.hero-art-line { position: absolute; width: 80%; height: 70%; border: 1px solid rgba(255,255,255,.10); border-radius: 55% 15% 12% 25%; transform: skew(-7deg); }
+.hero-art-copy { position: relative; max-width: 330px; margin-left: 100px; padding: 28px; border-left: 1px solid var(--blue); background: linear-gradient(90deg, rgba(7,9,12,.86), transparent); }
+.hero-art-copy span { display:block; color: var(--blue-bright); font-size: 12px; letter-spacing:.12em; text-transform:uppercase; margin-bottom: 10px; }
+.hero-art-copy p { margin:0; color:#aeb5bc; line-height:1.6; }
+
+.section { padding: 110px 0; border-bottom: 1px solid var(--line); }
+.section-label { color: var(--blue-bright); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
+.section h2 { font-size: clamp(42px, 4vw, 64px); font-weight: 400; letter-spacing: -.035em; margin: 16px 0 20px; }
+.section-copy { color: var(--muted); max-width: 620px; line-height: 1.75; }
+.services-grid { margin-top: 54px; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.service { padding: 32px 28px 36px; min-height: 245px; border-right: 1px solid var(--line); }
+.service:last-child { border-right: 0; }
+.service-number { color: var(--blue); font-size: 12px; }
+.service h3 { font-size: 24px; font-weight: 500; margin: 50px 0 14px; }
+.service p { color: var(--muted); line-height: 1.65; font-size: 14px; }
+.text-link { display: inline-flex; gap: 10px; color: var(--blue-bright); margin-top: 16px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+
+.split { display: grid; grid-template-columns: .9fr 1.1fr; gap: 90px; align-items: center; }
+.photo-placeholder { min-height: 420px; border: 1px solid var(--line); background: radial-gradient(circle at 30% 30%, rgba(8,127,184,.18), transparent 22%), linear-gradient(135deg, #10161c, #05070a); position:relative; overflow:hidden; }
+.photo-placeholder::after { content:""; position:absolute; inset:16% 10%; border:1px solid rgba(255,255,255,.08); transform:skew(-10deg); }
+.quote-panel { padding: 64px; background: var(--surface); border: 1px solid var(--line); }
+.quote-panel blockquote { font-size: clamp(30px,3vw,48px); line-height:1.25; margin:0 0 26px; font-weight:300; }
+.quote-panel p { color:var(--muted); }
+
+.coverage { display:grid; grid-template-columns: .82fr 1.18fr; gap:60px; align-items:stretch; }
+.map-placeholder { min-height: 390px; border: 1px solid var(--line); background: radial-gradient(ellipse at 45% 52%, rgba(8,127,184,.32), rgba(8,127,184,.06) 40%, transparent 64%), #090d12; position:relative; }
+.map-placeholder::before { content:"ROMSEY"; position:absolute; left:48%; top:47%; transform:translate(-50%,-50%); color:#fff; background:#081019; border:1px solid var(--blue); padding:10px 16px; font-size:12px; letter-spacing:.1em; }
+.map-placeholder::after { content:"POOLE  ←    SOUTH HAMPSHIRE    →  GOSPORT   ·   ↑ WINCHESTER"; position:absolute; left:50%; bottom:30px; transform:translateX(-50%); white-space:nowrap; color:#75818c; font-size:10px; letter-spacing:.13em; }
+
+.cta { padding: 82px 0; }
+.cta-inner { display:flex; justify-content:space-between; align-items:center; gap:40px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:52px 0; }
+.cta h2 { margin:0; font-size:clamp(38px,4vw,60px); font-weight:400; }
+.cta h2 span { color:var(--blue); }
+.footer { padding:42px 0 56px; color:#808890; font-size:12px; }
+.footer-inner { display:flex; justify-content:space-between; gap:30px; flex-wrap:wrap; }
+.footer strong { color:#dce0e4; font-weight:500; }
+
+@media (max-width: 900px) {
+  .shell { width:min(100% - 28px, 720px); }
+  .site-header { height:84px; }
+  .nav a:not(.header-quote) { display:none; }
+  .brand-main { font-size:25px; }
+  .hero { min-height:auto; padding:100px 0 70px; }
+  .hero-inner, .split, .coverage { grid-template-columns:1fr; gap:46px; }
+  .hero-art { min-height:280px; }
+  .hero-art-copy { margin-left:0; }
+  .services-grid { grid-template-columns:1fr 1fr; }
+  .service:nth-child(2) { border-right:0; }
+  .service { border-bottom:1px solid var(--line); }
+  .cta-inner { align-items:flex-start; flex-direction:column; }
+}
+
+@media (max-width: 580px) {
+  .hero h1 { font-size:52px; }
+  .lede { font-size:16px; }
+  .actions { align-items:flex-start; flex-direction:column; }
+  .services-grid { grid-template-columns:1fr; }
+  .service { border-right:0; }
+  .section { padding:78px 0; }
+  .quote-panel { padding:36px 26px; }
+  .map-placeholder::after { content:"POOLE  ←  ROMSEY  →  GOSPORT"; }
+}
